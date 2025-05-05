@@ -12,5 +12,3 @@ script = ExtResource("1_ig7tw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 shape = SubResource("CircleShape2D_0xm2m")
-
-[node name="Sprite2D" type="Sprite2D" parent="Player"]
