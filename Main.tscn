@@ -1,9 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://bq45yhfeonpvc"]
+[gd_scene load_steps=6 format=3 uid="uid://bq45yhfeonpvc"]
 
 [ext_resource type="Script" uid="uid://qadfw1unxjj5" path="res://scripts/player.gd" id="1_ig7tw"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_0xm2m"]
-radius = 16.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_0xm2m"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ig7tw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lquwl"]
+size = Vector2(200, 20)
 
 [node name="Node2D" type="Node2D"]
 
@@ -11,6 +17,18 @@ radius = 16.0
 script = ExtResource("1_ig7tw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-shape = SubResource("CircleShape2D_0xm2m")
+shape = SubResource("RectangleShape2D_0xm2m")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
+scale = Vector2(20, 20)
+texture = SubResource("CanvasTexture_0xm2m")
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2(0, 100)
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground"]
+scale = Vector2(200, 19.9)
+texture = SubResource("CanvasTexture_ig7tw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+shape = SubResource("RectangleShape2D_lquwl")

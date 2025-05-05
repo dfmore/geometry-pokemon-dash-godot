@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@export var speed: float = 150.0
 @export var jump_force: float = 600.0
 @export var gravity: float = 1200.0
 
@@ -11,6 +12,8 @@ var can_double_jump = true
 var has_jumped = false
 
 func _physics_process(delta):
+	velocity.x = speed
+
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	else:
